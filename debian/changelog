@@ -1,0 +1,205 @@
+zope.event (4.4-3) unstable; urgency=medium
+
+  * New maintainer. (Closes: #948807)
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: changed from 'debhelper' to 'debhelper-compat' in
+        Build-Depends field and bumped level to 13.
+  * debian/control:
+      - Added 'Rules-Requires-Root: no' to source stanza.
+      - Bumped Standards-Version to 4.5.0.
+      - Created VCS fields.
+      - Updated section from zope to python.
+  * debian/copyright:
+      - Added packaging copyright.
+      - Removed 'Files-Excluded: docs/_build/*', files are not available in
+        upstream.
+      - Using a secure URI in Format field.
+  * debian/salsa-ci.yml: added to provide CI tests for Salsa.
+  * debian/upstream/metadata: created.
+  * debian/watch:
+      - Bumped to version 4.
+      - Updated to use secure uri.
+
+ -- Daniel Lenharo de Souza <lenharo@debian.org>  Sun, 14 Jun 2020 18:11:35 -0300
+
+zope.event (4.4-2) unstable; urgency=medium
+
+  * Replace custom autopkgtest with autodep8
+
+ -- Paul Gevers <elbrus@debian.org>  Sat, 21 Sep 2019 14:19:59 +0200
+
+zope.event (4.4-1) unstable; urgency=medium
+
+  * QA upload.
+  * Orphan the package. Closes: #869457.
+  * New upstream version.
+  * Stop building the Python2 package. Closes: #938904.
+  * Fix lintian warnings.
+
+ -- Matthias Klose <doko@debian.org>  Thu, 05 Sep 2019 07:55:08 +0200
+
+zope.event (4.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/control: Bump Standards-Version with no other changes necessary.
+
+ -- Barry Warsaw <barry@debian.org>  Thu, 10 Mar 2016 13:24:56 -0500
+
+zope.event (4.1.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * d/tests/control: Use simpler Test-Command syntax.
+  * d/tests/all{,-3}: Removed.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 27 Oct 2015 17:25:15 -0400
+
+zope.event (4.0.3-3) unstable; urgency=medium
+
+  * d/control:
+    - Bump Standards-Version with no other changes necessary.
+    - Bump debhelper Build-Depends to version 9.
+    - Add XS-Testsuite header.  (Closes: #692712)
+  * d/compat: Bump to version 9.
+  * d/watch: Use pypi.debian.net redirector.
+  * d/tests: Added DEP-8 tests.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 09 Jun 2015 11:36:17 -0400
+
+zope.event (4.0.3-2) unstable; urgency=medium
+
+  * debian/control: Drop Depends on python{,3}-zope pure virtual
+    packages.
+
+ -- Barry Warsaw <barry@debian.org>  Tue, 01 Jul 2014 11:45:20 -0400
+
+zope.event (4.0.3-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Gediminas Paulauskas ]
+  * New upstream release. (Closes: #706213)
+  * debian/control, debian/rules: switch to pybuild.
+  * Add support for Python 3
+  * debian/tests: remove, too simple package to bother.
+  * debian/control: use canonical URI for Vcs-Svn and Vcs-Browser.
+
+  [ Arnaud Fontaine ]
+  * debian/clean: remove to make sure all files are installed.
+  * debian/source/options: ignore .egg-info directory.
+
+  [ Barry Warsaw ]
+  * Bump to 4.0.3.
+  * d/control:
+    - Tweak long descriptions.
+    - wrap-and-sort
+  * Added myself to Uploaders.
+  * d/copyright: Added Files-Excluded header to prune pre-built Sphinx
+    artifacts in docs/_build from the original tarball.
+
+ -- Barry Warsaw <barry@debian.org>  Fri, 20 Jun 2014 11:08:39 -0400
+
+zope.event (3.5.1-1) unstable; urgency=low
+
+  * Team upload.
+
+  [ Arnaud Fontaine ]
+  * debian/control: add Homepage and Vcs-Browser fields.
+  * Add debian/clean to get rid of egg-info/* to prevent FTBFS if
+    built twice.
+
+  [ Gediminas Paulauskas ]
+  * New upstream release.
+  * Use dh_python2 instead of deprecated python-central. (Closes: #617166)
+  * debian/control: build-depend on python-all (not -dev).
+  * debian/copyright: update, convert to dep5 format.
+  * Switch to 3.0 (quilt) source format.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Wed, 19 Oct 2011 00:34:00 +0900
+
+zope.event (3.4.1-6) unstable; urgency=low
+
+  * Convert to debhelper 7 and the pydeb dh7 extension.
+
+ -- Fabio Tranchitella <kobold@debian.org>  Tue, 22 Dec 2009 12:36:50 +0100
+
+zope.event (3.4.1-5) unstable; urgency=low
+
+  [ Brian Sutherland ]
+  *  Set priority to optional as we are depended on by python-zodb which is
+     priority optional.
+
+  [ Fabio Tranchitella ]
+  * debian/control: build-depend on python-van.pydeb >= 1.3.0-2.
+    (Closes: #552681)
+
+ -- Fabio Tranchitella <kobold@debian.org>  Sun, 08 Nov 2009 11:25:19 +0100
+
+zope.event (3.4.1-4) unstable; urgency=low
+
+  * Set section to zope.
+  * Rebuild against van.pydeb 1.3.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sun, 13 Sep 2009 09:40:15 +0200
+
+zope.event (3.4.1-3) unstable; urgency=low
+
+  * debian/tests/control: Also depend on ourselves as a testing dependency.
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 02 Jun 2009 13:42:00 +0200
+
+zope.event (3.4.1-2) unstable; urgency=low
+
+  * debian/tests/control: Add python-zope.testing as test dependency.
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 02 Jun 2009 13:19:16 +0200
+
+zope.event (3.4.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Add watch file
+  * Change source package name
+  * Standards-Version 3.8.1
+  * Python-Version all
+  * Build with the newer python-van.pydeb rather than python-
+    vanguardistas.pydebdep
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Mon, 25 May 2009 22:34:26 +0200
+
+python-zope.event (3.4.0-2ubuntu1.3) lenny; urgency=low
+
+  * Non-maintainer upload.
+  * Rebuild for lenny
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Fri, 08 May 2009 11:06:50 +0000
+
+python-zope.event (3.4.0-2ubuntu1.2) etch-devel; urgency=low
+
+  * Add Replaces: zope3.
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 22 Jul 2008 10:42:25 +0200
+
+python-zope.event (3.4.0-2ubuntu1.1) etch-devel; urgency=low
+
+  * Non-maintainer upload.
+  * Rebuild for etch-devel
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 22 Jul 2008 10:31:35 +0200
+
+python-zope.event (3.4.0-2ubuntu1) hardy; urgency=low
+
+  * Re-build for hardy
+
+ -- Ignas Mikalajunas <ignas.mikalajunas@gmail.com>  Wed, 23 Apr 2008 11:19:04 +0300
+
+python-zope.event (3.4.0-2) gutsy; urgency=low
+
+  * Use pydebdep
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Tue, 12 Feb 2008 22:54:40 +0100
+
+python-zope.event (3.4.0-1) gutsy; urgency=low
+
+  * Initial Release
+
+ -- Brian Sutherland <brian@vanguardistas.net>  Thu,  8 Nov 2007 19:27:48 +0100

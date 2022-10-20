@@ -1,0 +1,25 @@
+Source: zope.event
+Section: python
+Priority: optional
+Maintainer: Daniel Lenharo de Souza <lenharo@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.5.0
+Testsuite: autopkgtest-pkg-python
+Rules-Requires-Root: no
+Homepage: http://pypi.python.org/pypi/zope.event
+Vcs-Git: https://salsa.debian.org/debian/zope.event.git
+Vcs-Browser: https://salsa.debian.org/debian/zope.event
+
+Package: python3-zope.event
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Very basic event publishing system
+ This package provides a simple event system. It provides an event publishing
+ system and a very simple event-dispatching system on which more sophisticated
+ event dispatching systems can be built. For example, a type-based event
+ dispatching system that builds on zope.event can be found in zope.component.
+ .
+ This is the Python 3 library.
